@@ -1,0 +1,37 @@
+{
+    "board_size": 4,
+    "target_score": 2048,
+    "initial_tiles": 2,
+    "probabilities": {
+        "2": 0.9,
+        "4": 0.1
+    },
+    "colors": {
+        "0": "#CDC1B4",
+        "2": "#EEE4DA",
+        "4": "#EDE0C8",
+        "8": "#F2B179",
+        "16": "#F59563",
+        "32": "#F67C5F",
+        "64": "#F65E3B",
+        "128": "#EDCF72",
+        "256": "#EDCC61",
+        "512": "#15E1F3",
+        "1024": "#1A66FF",
+        "2048": "#8C00FF"
+    },
+    "font_colors": {
+        "light": "#F9F6F2",
+        "dark": "#776E65"
+    },
+    "window_size": [600, 700],
+    "tile_size": 120,
+    "padding": 15,
+    "font_sizes": {
+        "small": 36,
+        "medium": 48,
+        "large": 60
+    },
+    "animation_speed": 10,
+    "animation_duration": 15
+}
