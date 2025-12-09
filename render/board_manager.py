@@ -1,38 +1,7 @@
 import random
 from typing import List, Tuple
 from enum import Enum
-
-class AnimationType(Enum):
-    MOVE = 1
-    MERGE = 2
-    APPEAR = 3
-
-class TileAnimation:
-    def __init__(self, start_pos: Tuple[int, int], end_pos: Tuple[int, int], 
-                 value: int, anim_type: AnimationType, duration: int):
-        self.start_pos = start_pos
-        self.end_pos = end_pos
-        self.current_pos = list(start_pos)
-        self.value = value
-        self.anim_type = anim_type
-        self.duration = duration
-        self.progress = 0
-    
-    def update(self) -> bool:
-        self.progress += 1
-        if self.progress >= self.duration:
-            self.current_pos = list(self.end_pos)
-            return True
-        
-        t = self.progress / self.duration
-        if self.anim_type == AnimationType.MOVE:
-            self.current_pos[0] = int(self.start_pos[0] + (self.end_pos[0] - self.start_pos[0]) * t)
-            self.current_pos[1] = int(self.start_pos[1] + (self.end_pos[1] - self.start_pos[1]) * t)
-        elif self.anim_type == AnimationType.MERGE:
-            self.current_pos[0] = int(self.start_pos[0] + (self.end_pos[0] - self.start_pos[0]) * t)
-            self.current_pos[1] = int(self.start_pos[1] + (self.end_pos[1] - self.start_pos[1]) * t)
-        
-        return False
+from anim.animation import AnimationType, TileAnimation
 
 class BoardManager:
     def __init__(self, config_manager):
